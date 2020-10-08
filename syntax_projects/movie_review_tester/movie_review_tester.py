@@ -29,8 +29,33 @@ def movie_displayer():
 
     user_selections = list() ## Error, not saving user input accurately
     for i in range(0,3,1):
-        user_selections.append(input())
+        user_selections.append(card_1[int(input())])
+    
+    return user_selections
 
-    return 0
+def movie_taste(set_movies):
+    taste_profile = {
+        'romance_fan' : False,
+        'action_fan' : False,
+        'art_fan' : False
+    }
+        
 
-movie_displayer()
+    if set_movies.issubset(action) == True:
+        taste_profile['action_fan'] = True
+    if set_movies.issubset(romance) == True:
+        taste_profile['romance_fan'] = True
+    if set_movies.issubset(artistic) == True:
+        taste_profile['art_fan'] = True
+    
+    user_taste_profile = list()
+
+    print("You are a fan of:")
+
+    for i,v in taste_profile.items():
+        if v == True:
+            print(i) 
+
+    
+selected_movies = movie_displayer()
+movie_taste(set(selected_movies))
