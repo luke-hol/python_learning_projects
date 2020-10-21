@@ -41,11 +41,11 @@ def determine_taste(set_movies):
     }
     #this is new code
 
-    if set_movies.issubset(action):
+    if set_movies.isdisjoint(action) is False:
         taste_profile['action_fan'] = True
-    if set_movies.issubset(romance):
+    if set_movies.isdisjoint(romance) is False:
         taste_profile['romance_fan'] = True
-    if set_movies.issubset(artistic):
+    if set_movies.isdisjoint(artistic) is False:
         taste_profile['art_fan'] = True
     
     user_taste_profile = list()
