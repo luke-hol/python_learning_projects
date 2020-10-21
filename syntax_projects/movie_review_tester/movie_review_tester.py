@@ -12,7 +12,7 @@ artistic = {'Phantom Thread', 'Once Upon a Time in Hollywood', 'Inherent Vice', 
          'Good Fellas', 'Schindler\'s List', 'The Revenant', 'American Beauty', 'Black Swan', 'Ford v Ferrari'
          }
 
-def movie_displayer():
+def display_movies():
     print("Select 3 movies from each selection.\nYou will need to enter the number for each one of your choices 1 at a time then hit enter.\nIf you choose the wrong selection, you can redo your selection.")
 
     rom_movies = list(random.sample(romance,6))
@@ -33,7 +33,7 @@ def movie_displayer():
     
     return user_selections
 
-def movie_taste(set_movies):
+def determine_taste(set_movies):
     taste_profile = {
         'romance_fan' : False,
         'action_fan' : False,
@@ -41,11 +41,11 @@ def movie_taste(set_movies):
     }
     #this is new code
 
-    if set_movies.issubset(action) == True:
+    if set_movies.issubset(action):
         taste_profile['action_fan'] = True
-    if set_movies.issubset(romance) == True:
+    if set_movies.issubset(romance):
         taste_profile['romance_fan'] = True
-    if set_movies.issubset(artistic) == True:
+    if set_movies.issubset(artistic):
         taste_profile['art_fan'] = True
     
     user_taste_profile = list()
@@ -53,9 +53,9 @@ def movie_taste(set_movies):
     print("You are a fan of:")
 
     for i,v in taste_profile.items():
-        if v == True:
+        if v:
             print(i) 
 
     
-selected_movies = movie_displayer()
-movie_taste(set(selected_movies))
+selected_movies = display_movies()
+determine_taste(set(selected_movies))
