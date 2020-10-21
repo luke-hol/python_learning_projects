@@ -25,10 +25,10 @@ def display_movies():
     print("\nCard 1:\n")
 
     for i in card_1:
-        print(card_1.index(i),i,'\n')
+        print(card_1.index(i), i, '\n')
 
     user_selections = list() ## Error, not saving user input accurately
-    for i in range(0,3,1):
+    for i in range(0, 3, 1):
         user_selections.append(card_1[int(input())])
     
     return user_selections
@@ -39,7 +39,7 @@ def determine_taste(set_movies):
         'action_fan' : False,
         'art_fan' : False
     }
-    #this is new code
+    # this is new code
 
     if set_movies.isdisjoint(action) is False:
         taste_profile['action_fan'] = True
@@ -52,9 +52,9 @@ def determine_taste(set_movies):
 
     print("You are a fan of:")
 
-    for i,v in taste_profile.items():
+    for genre, v in taste_profile.items():
         if v:
-            print(i) 
+            print(genre)
 
     
 selected_movies = display_movies()
