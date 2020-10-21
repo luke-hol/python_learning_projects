@@ -39,7 +39,7 @@ def movie_taste(set_movies):
         'action_fan' : False,
         'art_fan' : False
     }
-        
+    #this is new code
 
     if set_movies.issubset(action) == True:
         taste_profile['action_fan'] = True
