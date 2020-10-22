@@ -1,0 +1,36 @@
+To recommend movies, 
+	need to get user feedback
+
+		To get user feedback, need to build movie cards
+
+			To get movie cards, need to build collection of titles
+
+				To build collection of titles, 
+					need to import title files
+				
+			To get movie cards, 
+				need to randomly select items from movie titles
+			
+		To get user feedback, need to capture user preferences
+			
+			To capture user preferences, 
+				need to present movie cards
+				need to store user prefferences
+	return and store user feedback
+	
+	need to evaluate user feedback
+	
+		To evaluate user feedback
+			need to compare user preferences with informed movie set
+			need to build user's taste profile
+			
+	
+	return user taste profile
+	
+	need to use taste profile to recommend new movies
+		
+		To recommend new movies
+			need to build recommendation card with new movies
+			
+			to build recommendation card,
+				need to fill recommendation card with movies that align with taste profile
