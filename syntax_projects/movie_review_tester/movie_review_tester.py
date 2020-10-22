@@ -16,6 +16,7 @@ artistic = {'Phantom Thread', 'Once Upon a Time in Hollywood', 'Inherent Vice', 
 
 # Display selection of movies, and get feedback
 
+
 def display_movies():
     print(
         "Select 3 movies from each selection.\n"
@@ -32,8 +33,6 @@ def display_movies():
 
         return card
 
-    card_1 = make_card()
-
     # build card
     def show_card(card):
         print("\nCard 1:\n")
@@ -41,6 +40,7 @@ def display_movies():
         for i in card:
             print(card.index(i), i, '\n')
 
+    card_1 = make_card()
     show_card(card_1)
     # Get user selections
 
@@ -51,16 +51,27 @@ def display_movies():
 
         return user_selections
 
-    get_user_preference()
+    return get_user_preference()
 
 # Compare selections with movie list to determine set.
 
+
 def determine_taste(set_movies):
+
     taste_profile = {
         'romance_fan': False,
         'action_fan': False,
         'art_fan': False
     }
+
+    def choose_genres(set_movies, taste_profile):
+
+        if set_movies.isdisjoint(action) is False:
+            taste_profile['action_fan'] = True
+        if set_movies.isdisjoint(romance) is False:
+            taste_profile['romance_fan'] = True
+        if set_movies.isdisjoint(artistic) is False:
+            taste_profile['art_fan'] = True
 
     choose_genres(set_movies, taste_profile)
 
@@ -71,16 +82,6 @@ def determine_taste(set_movies):
     for genre, v in taste_profile.items():
         if v:
             print(genre)
-
-
-def choose_genres(set_movies, taste_profile):
-    if set_movies.isdisjoint(action) is False:
-        taste_profile['action_fan'] = True
-    if set_movies.isdisjoint(romance) is False:
-        taste_profile['romance_fan'] = True
-    if set_movies.isdisjoint(artistic) is False:
-        taste_profile['art_fan'] = True
-
 
 selected_movies = display_movies()
 determine_taste(set(selected_movies))
